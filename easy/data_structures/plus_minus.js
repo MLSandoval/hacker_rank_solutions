@@ -69,18 +69,27 @@ function plusMinus(arr) {
   arr.forEach(val => {
     switch(true){
       case val === 0:
-        integers.count.zero++
+        integers.zero.count++
         break
       case val > 0:
-        integers.count.pos++
+        integers.pos.count++
         break
       case val < 0:
-        integers.count.neg++
+        integers.neg.count++
         break
       default:
         return "Error: val doesn't fit range."
     }
   })
 
-  
+  for(let x in integers){
+    integers[x].ratio = (integers[x].count / denom).toFixed(6)
+  }
+
+  console.log(integers.pos.ratio)
+  console.log(integers.neg.ratio)
+  console.log(integers.zero.ratio)
 }
+
+plusMinus([-1, -1, 0, 1, 1])
+plusMinus([-4, 3, -9, 0, 4, 1])
