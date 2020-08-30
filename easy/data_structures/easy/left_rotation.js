@@ -31,5 +31,15 @@ const rotLeft = (a, d) => {
   let arr = [...a]
   let rotations = d
 
+  if(!d)
+    return a
   
-}
+  while(rotations){
+    arr.push(arr.shift())
+    rotations--
+  }
+
+  return arr
+} 
+
+console.log(rotLeft([1,2,3,4,5], 3))
