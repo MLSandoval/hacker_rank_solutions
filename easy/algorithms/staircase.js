@@ -6,5 +6,3 @@ function staircase(n) {
     console.log(`${space.repeat(n - i)}${hash.repeat(i)}`)
   }
 }
-
-staircase(8)
