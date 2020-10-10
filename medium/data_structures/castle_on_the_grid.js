@@ -1,10 +1,26 @@
-function minimumMoves(grid, startX, startY, goalX, goalY) {
+function minimumMoves(grid, startY, startX, goalY, goalX) {
   let xDiff, yDiff
+  let movesStack = []
 
-  for(let i = startX; i <= goalX; i++){
-    for(let j = startY; j <= goalY; j++){
+  yDiff = startY - goalY
+  xDiff = startX - goalX
+
+  for(let i = startX; i <= grid.length; i++){
+
+
+    for(let j = startY; j <= grid.length; j++){
       
+      if(grid[i][j + 1] && grid[i][j + 1] !== 'X'){
+        movesStack.push([i, j+1])
+      }else if(i === goalX && j === goalY){
+        
+      }else{
+        break
+      }
+
+
     }
+
   }
 
 
